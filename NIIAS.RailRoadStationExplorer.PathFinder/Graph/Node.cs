@@ -9,8 +9,7 @@ namespace NIIAS.RailRoadStationExplorer.PathFinder.Graph
         public bool Gone { get; set; }
         public List<Edge> Edges { get; set; } = [];
 
-        public override string ToString()
-        {
+        public override string ToString() {
             return Point.Name;
         }
     }
@@ -25,8 +24,7 @@ namespace NIIAS.RailRoadStationExplorer.PathFinder.Graph
 
         public float Weight;
         public TrackPart TrackPart { get; set; }
-        public override string ToString()
-        {
+        public override string ToString() {
             return TrackPart.Name;
         }
         //public Edge(T value)

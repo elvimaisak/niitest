@@ -2,12 +2,10 @@
 {
     public class Park
     {
-        public Park()
-        {
+        public Park() {
         }
 
-        public Park(string name)
-        {
+        public Park(string name) {
             Name = name;
         }
 

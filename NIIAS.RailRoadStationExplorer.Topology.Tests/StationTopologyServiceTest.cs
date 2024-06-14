@@ -8,17 +8,16 @@ namespace NIIAS.RailRoadStationExplorer.Topology.Tests
     public class StationTopologyServiceTest
     {
         [Fact]
-        public void GetBorderPoints_When3Points_ReturnItAll()
-        {
+        public void GetBorderPoints_When3Points_ReturnItAll() {
             //arrange
             List<Point> points = [
                 new Point(1, 1, "A"),
                 new Point(2, 1, "B"),
                 new Point(2, 2, "C"),
                 ];
-            StationTopologyService objUnderTest = new StationTopologyService(new Mock<IParkRepository>().Object, new Mock<ITrackRepository>().Object);
+            var objUnderTest = new StationTopologyService(new Mock<IParkRepository>().Object, new Mock<ITrackRepository>().Object);
             //act
-            IList<Point> borderPoints = objUnderTest.GetBorderPoints(points);
+            var borderPoints = objUnderTest.GetBorderPoints(points);
             //assert
             borderPoints.Should().ContainInOrder(new List<Point>()
                 {
@@ -30,8 +29,7 @@ namespace NIIAS.RailRoadStationExplorer.Topology.Tests
 
 
         [Fact]
-        public void GetBorderPoints_When5Points_ReturnAppropriate5()
-        {
+        public void GetBorderPoints_When5Points_ReturnAppropriate5() {
             //arrange
             List<Point> points = [
                 new Point(1, 1, "A"),
@@ -41,9 +39,9 @@ namespace NIIAS.RailRoadStationExplorer.Topology.Tests
                 new Point(4, 2, "E"),
 
                 ];
-            StationTopologyService objUnderTest = new StationTopologyService(new Mock<IParkRepository>().Object, new Mock<ITrackRepository>().Object);
+            var objUnderTest = new StationTopologyService(new Mock<IParkRepository>().Object, new Mock<ITrackRepository>().Object);
             //act
-            IList<Point> borderPoints = objUnderTest.GetBorderPoints(points);
+            var borderPoints = objUnderTest.GetBorderPoints(points);
             //assert
             borderPoints.Should().ContainInOrder(
                 new List<Point>()
@@ -56,8 +54,7 @@ namespace NIIAS.RailRoadStationExplorer.Topology.Tests
         }
 
         [Fact]
-        public void GetBorderPoints_When6Points_ReturnAppropriate4()
-        {
+        public void GetBorderPoints_When6Points_ReturnAppropriate4() {
             //arrange
             List<Point> points = [
                 new Point(1, 1, "A"),
@@ -67,9 +64,9 @@ namespace NIIAS.RailRoadStationExplorer.Topology.Tests
                 new Point(4, 2, "E"),
                 new Point(3, 3, "F"),
                 ];
-            StationTopologyService objUnderTest = new StationTopologyService(new Mock<IParkRepository>().Object, new Mock<ITrackRepository>().Object);
+            var objUnderTest = new StationTopologyService(new Mock<IParkRepository>().Object, new Mock<ITrackRepository>().Object);
             //act
-            IList<Point> borderPoints = objUnderTest.GetBorderPoints(points);
+            var borderPoints = objUnderTest.GetBorderPoints(points);
             //assert
             borderPoints.Should().ContainInOrder(
                 new List<Point>()
@@ -82,8 +79,7 @@ namespace NIIAS.RailRoadStationExplorer.Topology.Tests
         }
 
         [Fact]
-        public void GetBorderPoints_When5Points_ReturnAppropriate4()
-        {
+        public void GetBorderPoints_When5Points_ReturnAppropriate4() {
             //arrange
             List<Point> points = [
                 new Point(1, 1, "A"),
@@ -93,9 +89,9 @@ namespace NIIAS.RailRoadStationExplorer.Topology.Tests
                 new Point(3.5f, 4, "E"),
 
                 ];
-            StationTopologyService objUnderTest = new StationTopologyService(new Mock<IParkRepository>().Object, new Mock<ITrackRepository>().Object);
+            var objUnderTest = new StationTopologyService(new Mock<IParkRepository>().Object, new Mock<ITrackRepository>().Object);
             //act
-            IList<Point> borderPoints = objUnderTest.GetBorderPoints(points);
+            var borderPoints = objUnderTest.GetBorderPoints(points);
             //assert
             borderPoints.Should().ContainInOrder(
                 new List<Point>()

@@ -6,8 +6,7 @@ namespace NIIAS.RailRoadStationExplorer.TestDataProvider
     {
         private readonly TestDataSource dataSource = new TestDataSource();
 
-        public TestDataBuilder WithPoints()
-        {
+        public TestDataBuilder WithPoints() {
             dataSource.Points.AddRange(
                 [
                     new Point(2, 5.5f, "A"),
@@ -39,10 +38,8 @@ namespace NIIAS.RailRoadStationExplorer.TestDataProvider
             return this;
         }
 
-        public TestDataBuilder WithTrackParts()
-        {
-            if (!dataSource.Points.Any())
-            {
+        public TestDataBuilder WithTrackParts() {
+            if (!dataSource.Points.Any()) {
                 WithPoints();
             }
 
@@ -80,10 +77,8 @@ namespace NIIAS.RailRoadStationExplorer.TestDataProvider
             return this;
         }
 
-        public TestDataBuilder WithTracks()
-        {
-            if (!dataSource.Parts.Any())
-            {
+        public TestDataBuilder WithTracks() {
+            if (!dataSource.Parts.Any()) {
                 WithTrackParts();
             }
 
@@ -101,10 +96,8 @@ namespace NIIAS.RailRoadStationExplorer.TestDataProvider
             return this;
         }
 
-        public TestDataBuilder WithParks()
-        {
-            if (!dataSource.Tracks.Any())
-            {
+        public TestDataBuilder WithParks() {
+            if (!dataSource.Tracks.Any()) {
                 WithTracks();
             }
 
@@ -118,37 +111,31 @@ namespace NIIAS.RailRoadStationExplorer.TestDataProvider
             return this;
         }
 
-        public TestDataSource Build()
-        {
+        public TestDataSource Build() {
             return dataSource;
         }
 
-        private TrackPart GenerateTrackPart(string point1, string point2)
-        {
-            Point pointStart = dataSource.Points.First(x => x.Name == point1);
-            Point pointEnd = dataSource.Points.First(x => x.Name == point2);
+        private TrackPart GenerateTrackPart(string point1, string point2) {
+            var pointStart = dataSource.Points.First(x => x.Name == point1);
+            var pointEnd = dataSource.Points.First(x => x.Name == point2);
 
             return new TrackPart($"{point1}{point2}", pointStart, pointEnd);
         }
 
-        private Track GenerateTrack(string name, List<string> parts)
-        {
-            Track result = new Track(name) { Parts = [] };
+        private Track GenerateTrack(string name, List<string> parts) {
+            var result = new Track(name) { Parts = [] };
 
-            foreach (string part in parts)
-            {
+            foreach (var part in parts) {
                 result.Parts.Add(dataSource.Parts.First(x => x.Name == part));
             }
 
             return result;
         }
 
-        private Park GeneratePark(string parkName, List<string> tracks)
-        {
-            Park result = new Park(parkName) { Tracks = [] };
+        private Park GeneratePark(string parkName, List<string> tracks) {
+            var result = new Park(parkName) { Tracks = [] };
 
-            foreach (string track in tracks)
-            {
+            foreach (var track in tracks) {
                 result.Tracks.Add(dataSource.Tracks.First(x => x.Name == track));
             }
             return result;

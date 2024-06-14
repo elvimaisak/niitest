@@ -11,39 +11,33 @@ namespace NIIAS.RailRoadStationExplorer.Topology
     {
         private readonly IParkRepository parkRepository;
         private readonly ITrackRepository trackRepository;
-        public StationTopologyService(IParkRepository parkRepository, ITrackRepository trackRepository)
-        {
+        public StationTopologyService(IParkRepository parkRepository, ITrackRepository trackRepository) {
             this.parkRepository = parkRepository;
             this.trackRepository = trackRepository;
         }
 
-        public IEnumerable<ParkViewModel> GetAllParks()
-        {
+        public IEnumerable<ParkViewModel> GetAllParks() {
             return parkRepository.GetAllParksFromStation().Select(x => new ParkViewModel() { Name = x.Name, Tracks = x.Tracks.Select(c => c.Name) });
         }
 
-        public IEnumerable<TrackPartViewModel> GetTrackParts()
-        {
+        public IEnumerable<TrackPartViewModel> GetTrackParts() {
             return trackRepository.GetAllTrackParts().Select(x => new TrackPartViewModel() { Name = x.Name });
         }
 
-        public TrackBorder GetBorder(string parkName)
-        {
-            Park park = parkRepository.Get(parkName);
-            IList<Point> points = GetBorderPoints(park.Tracks.SelectMany(x => x.Parts).SelectMany(x => new List<Point>() { x.Point1, x.Point2 }));
+        public TrackBorder GetBorder(string parkName) {
+            var park = parkRepository.Get(parkName);
+            var points = GetBorderPoints(park.Tracks.SelectMany(x => x.Parts).SelectMany(x => new List<Point>() { x.Point1, x.Point2 }));
             return new TrackBorder() { BorderPoints = points };
         }
 
 
-        public IList<Point> GetBorderPoints(IEnumerable<Point> points)
-        {
-            Point? leftPoint = points.MinBy(x => x.X);
+        public IList<Point> GetBorderPoints(IEnumerable<Point> points) {
+            var leftPoint = points.MinBy(x => x.X);
             List<Point> resultPoints = [];
 
-            PointEval current = new PointEval(leftPoint, new Vector2(-1, 0));
-            do
-            {
-                Dictionary<Point, PointEval> allAngles = GetAnglesToPoints(current, points.Except(resultPoints));
+            var current = new PointEval(leftPoint, new Vector2(-1, 0));
+            do {
+                var allAngles = GetAnglesToPoints(current, points.Except(resultPoints));
                 current = GetNext(allAngles);
                 resultPoints.Add(current.Point);
             }
@@ -53,14 +47,11 @@ namespace NIIAS.RailRoadStationExplorer.Topology
         }
 
 
-        private Dictionary<Point, PointEval> GetAnglesToPoints(PointEval current, IEnumerable<Point> points)
-        {
+        private Dictionary<Point, PointEval> GetAnglesToPoints(PointEval current, IEnumerable<Point> points) {
             Dictionary<Point, PointEval> result = [];
 
-            foreach (Point? point in points)
-            {
-                if (point != current.Point)
-                {
+            foreach (var point in points) {
+                if (point != current.Point) {
                     result.Add(point, GetAngleValuation(current, point));
                 }
             }
@@ -68,17 +59,14 @@ namespace NIIAS.RailRoadStationExplorer.Topology
             return result;
         }
 
-        private PointEval GetNext(Dictionary<Point, PointEval> allAngles)
-        {
+        private PointEval GetNext(Dictionary<Point, PointEval> allAngles) {
             return allAngles.MaxBy(x => x.Value.Cos).Value;
         }
 
-        private PointEval GetAngleValuation(PointEval p1, Point p2)
-        {
-            Vector2 vector = Vector2.Normalize(new Vector2(p2.X - p1.Point.X, p2.Y - p1.Point.Y));
+        private PointEval GetAngleValuation(PointEval p1, Point p2) {
+            var vector = Vector2.Normalize(new Vector2(p2.X - p1.Point.X, p2.Y - p1.Point.Y));
 
-            PointEval result = new PointEval(p2, vector)
-            {
+            var result = new PointEval(p2, vector) {
                 Cos = Vector2.Dot(p1.NormalizedVectorToPoint, vector)
             };
 
@@ -92,8 +80,7 @@ namespace NIIAS.RailRoadStationExplorer.Topology
 
             public float Cos { get; set; }
 
-            public PointEval(Point point, Vector2 vector)
-            {
+            public PointEval(Point point, Vector2 vector) {
                 Point = point;
                 NormalizedVectorToPoint = vector;
             }

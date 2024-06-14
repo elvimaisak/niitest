@@ -2,8 +2,7 @@
 {
     public struct TrackPartViewModel
     {
-        public TrackPartViewModel(string name)
-        {
+        public TrackPartViewModel(string name) {
             Name = name;
         }
         public string Name { get; set; }

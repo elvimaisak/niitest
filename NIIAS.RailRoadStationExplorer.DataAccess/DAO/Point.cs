@@ -2,12 +2,10 @@
 {
     public class Point
     {
-        public Point()
-        {
+        public Point() {
         }
 
-        public Point(float x, float y, string name)
-        {
+        public Point(float x, float y, string name) {
             X = x;
             Y = y;
             Name = name;

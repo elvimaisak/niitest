@@ -10,14 +10,14 @@ using NIIAS.RailRoadStationExplorer.Topology;
 using Sharprompt;
 
 
-TestDataSource dataSource = new TestDataBuilder()
+var dataSource = new TestDataBuilder()
                 .WithPoints()
                 .WithTrackParts()
                 .WithTracks()
                 .WithParks()
                 .Build();
 
-ServiceProvider serviceProvider = new ServiceCollection()
+var serviceProvider = new ServiceCollection()
   .AddLogging()
   .AddSingleton(dataSource)
   .AddTransient<IParkRepository, ParkRepository>()
@@ -28,14 +28,13 @@ ServiceProvider serviceProvider = new ServiceCollection()
   .AddTransient<ConsoleCommandService>()
   .BuildServiceProvider();
 
-ConsoleCommandService? cmdService = serviceProvider.GetService<ConsoleCommandService>();
+var cmdService = serviceProvider.GetService<ConsoleCommandService>();
 
 
 
-while (true)
-{
-    IEnumerable<ConsoleCommand> commands = cmdService.GetMainCommands();
-    ConsoleCommand selectedCommand = Prompt.Select("what would you like to do?", commands);
+while (true) {
+    var commands = cmdService.GetMainCommands();
+    var selectedCommand = Prompt.Select("what would you like to do?", commands);
     selectedCommand.Action();
 }
 

@@ -20,8 +20,7 @@ namespace NIIAS.RailRoadStationExplorer.PathFinder.Tests
 
         private readonly TrackPart ab, bc, cd, de, ef, be, bk, ke;
 
-        public PathServiceTests()
-        {
+        public PathServiceTests() {
             ab = new TrackPart("AB", points.First(x => x.Name == "A"), points.First(x => x.Name == "B"));
             bc = new TrackPart("BC", points.First(x => x.Name == "B"), points.First(x => x.Name == "C"));
             cd = new TrackPart("CD", points.First(x => x.Name == "C"), points.First(x => x.Name == "D"));
@@ -34,19 +33,18 @@ namespace NIIAS.RailRoadStationExplorer.PathFinder.Tests
 
 
         [Fact]
-        public void FindShortestPath()
-        {
+        public void FindShortestPath() {
             //arrange
-            Mock<ITrackRepository> trackRepo = new Mock<ITrackRepository>();
+            var trackRepo = new Mock<ITrackRepository>();
             List<TrackPart> trackParts = [ab, bc, cd, de, ef];
             trackRepo.Setup(x => x.GetAllPoints()).Returns(points);
             trackRepo.Setup(x => x.GetAllTrackParts()).Returns(trackParts);
             trackRepo.Setup(x => x.GetTrackPart(It.IsAny<string>())).Returns<string>(c => trackParts.FirstOrDefault(x => x.Name == c));
 
-            PathService objUnderTest = new PathService(trackRepo.Object, new GraphService());
+            var objUnderTest = new PathService(trackRepo.Object, new GraphService());
 
             //act
-            bool result = objUnderTest.GetShortestPath("AB", "EF", out List<TrackPart> shortestPath);
+            var result = objUnderTest.GetShortestPath("AB", "EF", out var shortestPath);
 
             //assert
             result.Should().BeTrue();
@@ -54,19 +52,18 @@ namespace NIIAS.RailRoadStationExplorer.PathFinder.Tests
         }
 
         [Fact]
-        public void FindShortestPath1()
-        {
+        public void FindShortestPath1() {
             //arrange
-            Mock<ITrackRepository> trackRepo = new Mock<ITrackRepository>();
+            var trackRepo = new Mock<ITrackRepository>();
             List<TrackPart> trackParts = [ab, bc, cd, de, ef, be];
             trackRepo.Setup(x => x.GetAllPoints()).Returns(points);
             trackRepo.Setup(x => x.GetAllTrackParts()).Returns(trackParts);
             trackRepo.Setup(x => x.GetTrackPart(It.IsAny<string>())).Returns<string>(c => trackParts.FirstOrDefault(x => x.Name == c));
 
-            PathService objUnderTest = new PathService(trackRepo.Object, new GraphService());
+            var objUnderTest = new PathService(trackRepo.Object, new GraphService());
 
             //act
-            bool result = objUnderTest.GetShortestPath("AB", "EF", out List<TrackPart> shortestPath);
+            var result = objUnderTest.GetShortestPath("AB", "EF", out var shortestPath);
 
             //assert
             result.Should().BeTrue();
@@ -74,19 +71,18 @@ namespace NIIAS.RailRoadStationExplorer.PathFinder.Tests
         }
 
         [Fact]
-        public void FindShortestPath2()
-        {
+        public void FindShortestPath2() {
             //arrange
-            Mock<ITrackRepository> trackRepo = new Mock<ITrackRepository>();
+            var trackRepo = new Mock<ITrackRepository>();
             List<TrackPart> trackParts = [ab, bc, cd, de, ef, bk, ke];
             trackRepo.Setup(x => x.GetAllPoints()).Returns(points);
             trackRepo.Setup(x => x.GetAllTrackParts()).Returns(trackParts);
             trackRepo.Setup(x => x.GetTrackPart(It.IsAny<string>())).Returns<string>(c => trackParts.FirstOrDefault(x => x.Name == c));
 
-            PathService objUnderTest = new PathService(trackRepo.Object, new GraphService());
+            var objUnderTest = new PathService(trackRepo.Object, new GraphService());
 
             //act
-            bool result = objUnderTest.GetShortestPath("AB", "EF", out List<TrackPart> shortestPath);
+            var result = objUnderTest.GetShortestPath("AB", "EF", out var shortestPath);
 
             //assert
             result.Should().BeTrue();
@@ -94,19 +90,18 @@ namespace NIIAS.RailRoadStationExplorer.PathFinder.Tests
         }
 
         [Fact]
-        public void FindShortestPath3()
-        {
+        public void FindShortestPath3() {
             //arrange
-            Mock<ITrackRepository> trackRepo = new Mock<ITrackRepository>();
+            var trackRepo = new Mock<ITrackRepository>();
             List<TrackPart> trackParts = [ab, bc, cd, ef];
             trackRepo.Setup(x => x.GetAllPoints()).Returns(points);
             trackRepo.Setup(x => x.GetAllTrackParts()).Returns(trackParts);
             trackRepo.Setup(x => x.GetTrackPart(It.IsAny<string>())).Returns<string>(c => trackParts.FirstOrDefault(x => x.Name == c));
 
-            PathService objUnderTest = new PathService(trackRepo.Object, new GraphService());
+            var objUnderTest = new PathService(trackRepo.Object, new GraphService());
 
             //act
-            bool result = objUnderTest.GetShortestPath("AB", "EF", out List<TrackPart> shortestPath);
+            var result = objUnderTest.GetShortestPath("AB", "EF", out var shortestPath);
 
             //assert
             result.Should().BeFalse();

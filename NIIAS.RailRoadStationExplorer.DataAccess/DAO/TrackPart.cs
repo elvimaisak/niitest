@@ -2,13 +2,11 @@
 {
     public class TrackPart
     {
-        public TrackPart()
-        {
+        public TrackPart() {
 
         }
 
-        public TrackPart(string name, Point point1, Point point2)
-        {
+        public TrackPart(string name, Point point1, Point point2) {
             Name = name;
             Point1 = point1;
             Point2 = point2;
