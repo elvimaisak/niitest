@@ -1,0 +1,91 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34616.47
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NIIAS.RailRoadStationExplorer", "NIIAS.RailRoadStationExplorer\NIIAS.RailRoadStationExplorer.csproj", "{77E52F78-2689-43C3-96A6-2DAC231C53DF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NIIAS.RailRoadStationExplorer.Common.DAL", "NIIAS.RailRoadStationExplorer.DataAccess\NIIAS.RailRoadStationExplorer.Common.DAL.csproj", "{217C3655-1FB4-426B-A461-3947FC553EFC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NIIAS.RailRoadStationExplorer.Topology", "NIIAS.RailRoadStationExplorer.Services\NIIAS.RailRoadStationExplorer.Topology.csproj", "{97AD1B72-7625-496F-9615-FF03C373D091}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NIIAS.RailRoadExplorer.Topology.DAL", "NIIAS.RailRoadExplorer.Topology.DAL\NIIAS.RailRoadExplorer.Topology.DAL.csproj", "{25F23805-3093-4CC8-811C-149FBED5E81D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NIIAS.RailRoadStationExplorer.PathFinder", "NIIAS.RailRoadStationExplorer.PathFinder\NIIAS.RailRoadStationExplorer.PathFinder.csproj", "{7FB0BCAD-35D4-4758-9FC5-9B2C7D4213EA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NIIAS.RailRoadStationExplorer.PathFinder.DAL", "NIIAS.RailRoadStationExplorer.PathFinder.DAL\NIIAS.RailRoadStationExplorer.PathFinder.DAL.csproj", "{7EBC4B73-85FD-420A-B475-D2881399FC6B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{0815286E-8354-46FE-8E19-3EFB535B48F5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Topology", "Topology", "{24F34C6C-DFBD-4623-8A10-044D39FD216A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PathFinder", "PathFinder", "{5645CA68-1B81-47D0-874A-1BA42B45F58A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{C4255B28-40E7-4ECB-B1B9-FD33A42E6743}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NIIAS.RailRoadStationExplorer.Topology.Tests", "NIIAS.RailRoadStationExplorer.Topology.Tests\NIIAS.RailRoadStationExplorer.Topology.Tests.csproj", "{86C34666-3AF9-47C4-82EF-7EAA50E64CBE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NIIAS.RailRoadStationExplorer.TestDataProvider", "NIIAS.RailRoadStationExplorer.TestDataProvider\NIIAS.RailRoadStationExplorer.TestDataProvider.csproj", "{42C0BC28-9DCD-4CBA-B998-4732ABCE5AB9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NIIAS.RailRoadStationExplorer.PathFinder.Tests", "NIIAS.RailRoadStationExplorer.PathFinder.Tests\NIIAS.RailRoadStationExplorer.PathFinder.Tests.csproj", "{B06B741E-0A64-451D-8F14-66A954B41718}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{77E52F78-2689-43C3-96A6-2DAC231C53DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77E52F78-2689-43C3-96A6-2DAC231C53DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77E52F78-2689-43C3-96A6-2DAC231C53DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77E52F78-2689-43C3-96A6-2DAC231C53DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{217C3655-1FB4-426B-A461-3947FC553EFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{217C3655-1FB4-426B-A461-3947FC553EFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{217C3655-1FB4-426B-A461-3947FC553EFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{217C3655-1FB4-426B-A461-3947FC553EFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97AD1B72-7625-496F-9615-FF03C373D091}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97AD1B72-7625-496F-9615-FF03C373D091}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97AD1B72-7625-496F-9615-FF03C373D091}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97AD1B72-7625-496F-9615-FF03C373D091}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25F23805-3093-4CC8-811C-149FBED5E81D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25F23805-3093-4CC8-811C-149FBED5E81D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25F23805-3093-4CC8-811C-149FBED5E81D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25F23805-3093-4CC8-811C-149FBED5E81D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FB0BCAD-35D4-4758-9FC5-9B2C7D4213EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FB0BCAD-35D4-4758-9FC5-9B2C7D4213EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FB0BCAD-35D4-4758-9FC5-9B2C7D4213EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FB0BCAD-35D4-4758-9FC5-9B2C7D4213EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EBC4B73-85FD-420A-B475-D2881399FC6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EBC4B73-85FD-420A-B475-D2881399FC6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EBC4B73-85FD-420A-B475-D2881399FC6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EBC4B73-85FD-420A-B475-D2881399FC6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86C34666-3AF9-47C4-82EF-7EAA50E64CBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86C34666-3AF9-47C4-82EF-7EAA50E64CBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86C34666-3AF9-47C4-82EF-7EAA50E64CBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86C34666-3AF9-47C4-82EF-7EAA50E64CBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42C0BC28-9DCD-4CBA-B998-4732ABCE5AB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42C0BC28-9DCD-4CBA-B998-4732ABCE5AB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42C0BC28-9DCD-4CBA-B998-4732ABCE5AB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42C0BC28-9DCD-4CBA-B998-4732ABCE5AB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B06B741E-0A64-451D-8F14-66A954B41718}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B06B741E-0A64-451D-8F14-66A954B41718}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B06B741E-0A64-451D-8F14-66A954B41718}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B06B741E-0A64-451D-8F14-66A954B41718}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{217C3655-1FB4-426B-A461-3947FC553EFC} = {0815286E-8354-46FE-8E19-3EFB535B48F5}
+		{97AD1B72-7625-496F-9615-FF03C373D091} = {24F34C6C-DFBD-4623-8A10-044D39FD216A}
+		{25F23805-3093-4CC8-811C-149FBED5E81D} = {24F34C6C-DFBD-4623-8A10-044D39FD216A}
+		{7FB0BCAD-35D4-4758-9FC5-9B2C7D4213EA} = {5645CA68-1B81-47D0-874A-1BA42B45F58A}
+		{7EBC4B73-85FD-420A-B475-D2881399FC6B} = {5645CA68-1B81-47D0-874A-1BA42B45F58A}
+		{86C34666-3AF9-47C4-82EF-7EAA50E64CBE} = {C4255B28-40E7-4ECB-B1B9-FD33A42E6743}
+		{42C0BC28-9DCD-4CBA-B998-4732ABCE5AB9} = {0815286E-8354-46FE-8E19-3EFB535B48F5}
+		{B06B741E-0A64-451D-8F14-66A954B41718} = {C4255B28-40E7-4ECB-B1B9-FD33A42E6743}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {093B09F8-7129-4C80-A253-D3416C720F3D}
+	EndGlobalSection
+EndGlobal
