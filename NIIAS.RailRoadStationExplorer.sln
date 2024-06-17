@@ -27,7 +27,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NIIAS.RailRoadStationExplor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NIIAS.RailRoadStationExplorer.TestDataProvider", "NIIAS.RailRoadStationExplorer.TestDataProvider\NIIAS.RailRoadStationExplorer.TestDataProvider.csproj", "{42C0BC28-9DCD-4CBA-B998-4732ABCE5AB9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NIIAS.RailRoadStationExplorer.PathFinder.Tests", "NIIAS.RailRoadStationExplorer.PathFinder.Tests\NIIAS.RailRoadStationExplorer.PathFinder.Tests.csproj", "{B06B741E-0A64-451D-8F14-66A954B41718}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NIIAS.RailRoadStationExplorer.PathFinder.Tests", "NIIAS.RailRoadStationExplorer.PathFinder.Tests\NIIAS.RailRoadStationExplorer.PathFinder.Tests.csproj", "{B06B741E-0A64-451D-8F14-66A954B41718}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{179FA547-1532-4064-884E-CD2C238A828B}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
