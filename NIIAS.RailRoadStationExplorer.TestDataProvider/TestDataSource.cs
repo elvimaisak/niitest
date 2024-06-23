@@ -1,17 +1,17 @@
-﻿
+
 using NIIAS.RailRoadStationExplorer.Common.DAL.DAO;
 
 namespace NIIAS.RailRoadStationExplorer.TestDataProvider
 {
     public class TestDataSource
     {
-        public readonly List<Point> Points = [];
+        public List<Point> Points { get; } = [];
 
-        public readonly List<TrackPart> Parts = [];
+        public List<TrackPart> Parts { get; } = [];
 
-        public readonly List<Track> Tracks = [];
+        public List<Track> Tracks { get; } = [];
 
-        public readonly List<Park> Parks = [];
+        public List<Park> Parks { get; } = [];
 
     }
 }

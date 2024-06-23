@@ -1,11 +1,11 @@
-﻿using NIIAS.RailRoadStationExplorer.Common.DAL.DAO;
+using NIIAS.RailRoadStationExplorer.Common.DAL.DAO;
 
 namespace NIIAS.RailRoadStationExplorer.PathFinder.Graph
 {
     public class Node
     {
         public int Id { get; set; }
-        public Point Point { get; set; }
+        public Point Point { get; set; } = null!;
         public bool Gone { get; set; }
         public List<Edge> Edges { get; set; } = [];
 
@@ -20,10 +20,10 @@ namespace NIIAS.RailRoadStationExplorer.PathFinder.Graph
 
         //private readonly T value;
         //public T Value => value;
-        public Node SecondNode;
+        public Node SecondNode { get; set; } = null!;
 
-        public float Weight;
-        public TrackPart TrackPart { get; set; }
+        public float Weight { get; set; }
+        public TrackPart TrackPart { get; set; } = null!;
         public override string ToString() {
             return TrackPart.Name;
         }
